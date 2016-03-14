@@ -7,4 +7,10 @@ and open the template in the editor.
     Created on : 14.03.2016, 11:53:42
     Author     : andreev_af
 */
+@media screen {
+  body {
+    margin: 0px;
+    font-family: 'Oswald Italic', 'Exo2';
+  }
+}
 /*# sourceMappingURL=main.css.map */
