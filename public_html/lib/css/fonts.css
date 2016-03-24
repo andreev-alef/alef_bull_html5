@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 14.03.2016, 13:41:33
     Author     : andreev_af
 */
@@ -18,62 +18,42 @@ and open the template in the editor.
     Author     : alef
 */
 
-/*@font-face{
+@font-face{
     font-family: 'Cuprum';
-    src:    url('../fonts/cuprum-regular.ttf'),
-        url('../fonts/cuprum-regular.eot');
-}*/
+    src:    url('../fonts/cuprum-regular.woff');
+}
 @font-face{
     font-family: 'Noto Serif';
-    src:    url('../fonts/notoserif-regular.ttf'),
-        url('../fonts/notoserif-regular.eot');
+    src:    url('../fonts/notoserif-regular.woff');
 }
 
-/*@font-face{
+@font-face{
     font-family: 'PT Sans';
-    src:    url('../fonts/pt-sans.ttf'),
-        url('../fonts/pt-sans.eot');
-}*/
-/*@font-face{
+    src:    url('../fonts/pt-sans.woff');
+}
+@font-face{
     font-family: 'PT Serif';
-    src:    url('../fonts/pt_serif-web-regular.ttf'),
-        url('../fonts/pt_serif-web-regular.eot');
-}*/
+    src:    url('../fonts/pt_serif-web-regular.woff');
+}
 
-/*@font-face{
+@font-face{
     font-family: 'Open Sans';
-    src:    url('../fonts/opensans-regular.ttf'),
-        url('../fonts/opensans-regular.eot');
-}*/
+    src:    url('../fonts/opensans-regular.woff');
+}
 
-/*@font-face{
+@font-face{
     font-family: 'Open Sans Light';
-    src:    url('../fonts/opensans-light.ttf'),
-        url('../fonts/opensans-light.eot');
-}*/
+    src:    url('../fonts/opensans-light.woff');
+}
 
 @font-face{
     font-family: 'Exo2';
-    src:    url('../fonts/exo2-regular.ttf'),
-        url('../fonts/exo2-regular.eot');
+    src:    url('../fonts/exo2-regular.woff');
 }
 @font-face{
     font-family: 'Exo2 Light';
-    src:    url('../fonts/exo2-light.ttf'),
-        url('../fonts/exo2-light.eot');
+    src:    url('../fonts/exo2-light.woff');
 }
-
-/*@font-face{
-    font-family: 'Playfair Display';
-    src:    url('../fonts/playfairdisplay-regular.ttf'),
-        url('../fonts/playfairdisplay-regular.eot');
-}*/
-
-/*@font-face{
-    font-family: 'Playfair Display Italic';
-    src:    url('../fonts/playfairdisplay-italic.ttf'),
-        url('../fonts/playfairdisplay-italic.eot');
-}*/
 
 @font-face{
     font-family: 'Oswald';
@@ -82,4 +62,8 @@ and open the template in the editor.
 @font-face{
     font-family: 'Oswald Italic';
     src:    url('../fonts/Oswald-RegularItalic.woff');
+}
+@font-face{
+    font-family: 'Allegretto';
+    src:    url('../fonts/allegretto_script_two.woff');
 }
