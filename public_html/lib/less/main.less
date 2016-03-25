@@ -8,13 +8,17 @@ and open the template in the editor.
     Author     : andreev_af
 */
 
-@wr-header_height: 120px;
+@root_width: 1100px;
+@wr-header_height: 140px;
+@under-header_height: 13px;
+@wr-content_width: @root_width;
 @menu_item_height: 100%;
 @menu_item_color: 75%;
 
 @transition_duration_slow: 700ms;
 @transition_duration_fast: 400ms;
 
+.root,
 .fio,
 .main-menu,
 .wr-content
@@ -33,7 +37,11 @@ and open the template in the editor.
 
     .root{
         /*background-color: #8496BA;*/
-        background-color: #B3B3B3;
+        /*background-color: #B3B3B3;*/
+        min-height: 1700px;
+        width: @root_width;
+        left: 50%;
+        margin-left: -@root_width/2;
     }
 
     .wr-header{
@@ -45,31 +53,48 @@ and open the template in the editor.
         height: @wr-header_height;
         z-index: 1000;
     }
+    .under-header{
+        position: fixed;
+        background-color: rgba(213, 217, 225, 0);
+        border: none;
+        border-bottom-color: rgba(213, 217, 225, 0.62);
+        border-bottom-width: @under-header_height;
+        border-bottom-style: solid;
+        top: @wr-header_height;
+        left: 0px;
+        width: 100%;
+        height: 0px;
+        margin: 0px;
+        z-index: 1000;
+    }
     .fio{
         top: 0px;
         left: 0px;
-        width: 55%;
+        width: 50%;
         text-align: center;
         font-family: 'Allegretto';
-        font-size: 61px;
+        font-size: 71px;
         color: #A0E2E2;
     }
     .fio > a{
         text-decoration: none;
         color: inherit;
     }
-    
+
     .main-menu{
-        text-align: center;
-        right: 0px;
+        text-align: left;
+        left: 50%;
+        width: 50%;
     }
 
     .menu-item {
         display: inline-block;
-        height: @wr-header_height;
-        
+        margin: 0px;
     }
     .menu-item > a {
+        display: inline-block;
+        height: @wr-header_height;
+        width: 150px;
         text-align: center;
         text-decoration: none;
         color: rgb(@menu_item_color, @menu_item_color, @menu_item_color);
@@ -84,7 +109,9 @@ and open the template in the editor.
         padding-top: 64px;
 
         border-radius: 0px;
-        background-color: rgba(0,0,0,0);
+        background-color: rgba(0,0,0,0.0);
+        
+        transform: skewX(-17deg);
 
         transition-duration: @transition_duration_slow;
         transition-property: background-color, color;
@@ -100,11 +127,19 @@ and open the template in the editor.
         background-color: #0E8A8A;
         color: #fff;
     }
+    
+    .menu-item-title{
+        transform: skewX(17deg);
+        display: inline-block;
+    }
 
     /*----------------------------------------------------------------------------*/
     .wr-content{
-        top: @menu_item_height;
+        top: @wr-header_height + @under-header_height;
         min-height: 1100px;
+        width: @wr-content_width;
+        left: 50%;
+        margin-left: -@wr-content_width/2;
         color: #000;
         font-family: 'exo2 light';
         font-size: 24px;
@@ -112,8 +147,8 @@ and open the template in the editor.
     }
 
     .content{
-        margin-top: 43px;
-        margin-bottom: 63px;
+        /*        margin-top: 43px;
+                margin-bottom: 63px;*/
     }
     .content:nth-child(2n+1){
         background-color: #675B3E;
@@ -125,23 +160,43 @@ and open the template in the editor.
 
     .content-item{
         color: #FFF;
-    }
-
-    .content-title{
-        color: #FFF;
-        font-size: 70px;
-        background-color: rgba(255,255,255,0.62);
+        padding: 30px;
+        height: 100%;
+        width: 50%;
     }
 
     .content-item-ico{
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: top right;
-        /*background-image: url(http://ek-art.ru/images/buy/2010%20%D0%A3%D1%82%D1%80%D0%BE%2050%D1%8550.jpg);*/
-        /*background-image: url(https://d1ycxz9plii3tb.cloudfront.net/post_images/524e0ff07622ddcff00000d6/larger.jpg);*/
-        background-image: url(http://oboik.ru/1440-900-100-uploads/11_05_2013/view/201210/oboik.ru_60539.jpg);
         height: 470px;
+        padding: 0px;
+        display: table-row;
+        vertical-align: middle;
     }
+    
+    .content:nth-child(1) > .content-item-ico{
+        background-image: url(../img/oboik.ru_60539.jpg);        
+    }
+    .content:nth-child(2) > .content-item-ico{
+        background-image: url(../img/abstract-01.jpg);        
+    }
+    .content:nth-child(3) > .content-item-ico{
+        background-image: url(../img/larger.jpg);
+    }
+    
+    .content-title{
+        color: #000;
+        color: #FFF;
+        font-size: 70px;
+        /*background-color: rgba(255,255,255,0.62);*/
+        background-color: rgba(0,0,0,0.47);
+        padding: 40px;
+        margin: 0px;
+        margin-top: 19%;
+    }
+}
 
+@media screen and (max-width: 960px){
 
 }
