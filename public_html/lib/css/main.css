@@ -1,0 +1,214 @@
+.root,
+.fio,
+.main-menu,
+.menu-item,
+.banner,
+.wr-content,
+.content-item,
+.content-item-ico {
+  position: absolute;
+}
+.content {
+  position: relative;
+}
+@media screen {
+  body {
+    margin: 0px;
+    font-family: 'Noto Serif';
+    font-size: 14px;
+    background-color: #130036;
+    background-color: #252A40;
+  }
+  .root {
+    min-height: 1700px;
+    width: 100%;
+    left: 50%;
+    margin-left: -50%;
+  }
+  .wr-header {
+    position: fixed;
+    background-color: #003838;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 140px;
+    z-index: 1000;
+  }
+  .under-header {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom-color: #B3B3B3;
+    border-bottom-color: #D5D9E1;
+    border-bottom-width: 13px;
+    border-bottom-style: solid;
+    top: 140px;
+    left: 0px;
+    width: 100%;
+    height: 0px;
+    margin: 0px;
+    z-index: 1000;
+  }
+  .fio {
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    text-align: center;
+    font-family: 'Allegretto';
+    font-size: 71px;
+    color: #A0E2E2;
+  }
+  .fio > a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .main-menu {
+    text-align: left;
+    left: 50%;
+    width: 50%;
+  }
+  .menu-item {
+    margin: 0px;
+  }
+  .menu-item:nth-child(4) {
+    left: 450px;
+  }
+  .menu-item:nth-child(3) {
+    left: 300px;
+  }
+  .menu-item:nth-child(2) {
+    left: 150px;
+  }
+  .menu-item:nth-child(1) {
+    left: 0px;
+  }
+  .menu-item > a {
+    display: inline-block;
+    height: 140px;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    color: #bfbfbf;
+    font-size: 16px;
+    font-family: 'Exo2', 'Open Sans', 'Oswald';
+    font-weight: normal;
+    letter-spacing: 2px;
+    padding: 0px;
+    padding-left: 0px;
+    padding-top: 64px;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    transform: skewX(-17deg);
+    transition-duration: 700ms;
+    transition-property: background-color, color;
+  }
+  .menu-item > a:hover {
+    background-color: #0E8A8A;
+    color: #ffffff;
+  }
+  .menu-item > a:focus {
+    /*        background-color: #252A80;*/
+    background-color: #0E8A8A;
+    color: #fff;
+  }
+  .menu-item-title {
+    transform: skewX(17deg);
+    display: inline-block;
+  }
+  /*----------------------------------------------------------------------------*/
+  .wr-content {
+    top: 333px;
+    min-height: 1100px;
+    width: 1100px;
+    left: 50%;
+    margin-left: -550px;
+  }
+  .content {
+    height: 470px;
+  }
+  .content:nth-child(2n+1) {
+    background-color: #48190F;
+  }
+  .content:nth-child(2n+1) > .content-item {
+    left: 0px;
+  }
+  .content:nth-child(2n+1) > .content-item-ico {
+    right: 0px;
+  }
+  .content:nth-child(2n) {
+    background-color: #2F3449;
+  }
+  .content:nth-child(2n) > .content-item {
+    right: 0px;
+  }
+  .content:nth-child(2n) > .content-item-ico {
+    left: 0px;
+  }
+  /*    .design{
+            background-color: #48190F;
+        }*/
+  .content:nth-child(1) > .content-item-ico {
+    background-image: url(../img/oboik.ru_60539.jpg);
+  }
+  .content:nth-child(2) > .content-item-ico {
+    background-image: url(../img/abstract-01.jpg);
+  }
+  .content:nth-child(3) > .content-item-ico {
+    background-image: url(../img/larger.jpg);
+  }
+  .banner {
+    top: 153px;
+    height: 180px;
+    width: 100%;
+    background-color: #D5D9E1;
+    display: block;
+  }
+  .banner-title {
+    text-align: center;
+    /*text-transform: uppercase;*/
+    font-family: 'Allegretto';
+    /*font-family: 'Open Sans Light';*/
+    /*font-family: 'Noto Serif';*/
+    /*font-family: 'PT Serif';*/
+    font-size: 123px;
+    padding-top: 0px;
+  }
+  .content-item {
+    font-family: 'Exo2 Light';
+    /*font-family: 'Exo2';*/
+    /*font-family: 'Noto Serif';*/
+    /*font-family: 'Open Sans Light';*/
+    font-size: 19px;
+    font-weight: normal;
+    color: #FFF;
+    padding: 0px;
+    padding-left: 73px;
+    padding-right: 73px;
+    padding-top: 9%;
+    margin: 0px;
+    height: 470px;
+    width: 50%;
+  }
+  .content-item-ico {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 470px;
+    width: 50%;
+    padding: 0px;
+  }
+  .content-title {
+    color: #000;
+    color: #FFF;
+    font-size: 52px;
+    font-family: 'Exo2 Light';
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.47);
+    padding: 40px;
+    margin: 0px;
+    margin-top: 19%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
