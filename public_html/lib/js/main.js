@@ -5,3 +5,7 @@
  */
 
 
+$(document).ready(function () {
+    var audi = document.getElementById('audi');
+    audi.volume=0.19;
+});

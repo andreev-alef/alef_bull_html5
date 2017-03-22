@@ -1,29 +1,42 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*
-    Created on : 14.03.2016, 11:53:42
-    Author     : andreev_af
-*/
-
-@root_width: 1100px;
+@root_width: 100%;
 @wr-header_height: 140px;
-@under-header_height: 13px;
-@wr-content_width: @root_width;
 @menu_item_height: 100%;
+@menu_item_width: 150px;
 @menu_item_color: 75%;
+@menu_item_number: 4;
+@under-header_height: 13px;
+@wr-content_width: 1100px;
+@wr-content_min-height: 1100px;
+@content_height: 470px;
+@content-item_height: @content_height;
+@banner_height: 180px;
 
 @transition_duration_slow: 700ms;
 @transition_duration_fast: 400ms;
 
+@i: 1;
+
+.menu-item-generator(@i) when (@i <= @menu_item_number){
+    .menu-item-generator((@i + 1));
+    .menu-item:nth-child(@{i}){
+        left: @menu_item_width * (@i - 1);
+    }
+}
+
 .root,
 .fio,
 .main-menu,
-.wr-content
+.menu-item,
+.banner,
+.wr-content,
+.content-item,
+.content-item-ico
 {
     position: absolute;
+}
+
+.content{
+    position: relative;
 }
 
 @media screen{
@@ -31,13 +44,11 @@ and open the template in the editor.
         margin: 0px;
         font-family: 'Noto Serif';
         font-size: 14px;
-        background-color: #130036;
+        background-color: #130036;        
+        background-color: #252A40;        
     }
 
-
     .root{
-        /*background-color: #8496BA;*/
-        /*background-color: #B3B3B3;*/
         min-height: 1700px;
         width: @root_width;
         left: 50%;
@@ -55,9 +66,10 @@ and open the template in the editor.
     }
     .under-header{
         position: fixed;
-        background-color: rgba(213, 217, 225, 0);
+        background-color: rgba(0, 0, 0, 0);
         border: none;
-        border-bottom-color: rgba(213, 217, 225, 0.62);
+        border-bottom-color: #B3B3B3;        
+        border-bottom-color: #D5D9E1;
         border-bottom-width: @under-header_height;
         border-bottom-style: solid;
         top: @wr-header_height;
@@ -88,13 +100,18 @@ and open the template in the editor.
     }
 
     .menu-item {
-        display: inline-block;
         margin: 0px;
     }
+
+
+
+    .menu-item-generator(@i);
+
+
     .menu-item > a {
         display: inline-block;
         height: @wr-header_height;
-        width: 150px;
+        width: @menu_item_width;
         text-align: center;
         text-decoration: none;
         color: rgb(@menu_item_color, @menu_item_color, @menu_item_color);
@@ -103,14 +120,13 @@ and open the template in the editor.
         font-weight: normal;
         letter-spacing: 2px;
 
-
         padding: 0px;
         padding-left: 0px;
         padding-top: 64px;
 
         border-radius: 0px;
         background-color: rgba(0,0,0,0.0);
-        
+
         transform: skewX(-17deg);
 
         transition-duration: @transition_duration_slow;
@@ -118,7 +134,6 @@ and open the template in the editor.
     }
 
     .menu-item > a:hover {
-        /*background-color: #7B1904;*/
         background-color: #0E8A8A;
         color: rgba(255,255,255,1);
     }
@@ -127,7 +142,7 @@ and open the template in the editor.
         background-color: #0E8A8A;
         color: #fff;
     }
-    
+
     .menu-item-title{
         transform: skewX(17deg);
         display: inline-block;
@@ -135,33 +150,83 @@ and open the template in the editor.
 
     /*----------------------------------------------------------------------------*/
     .wr-content{
-        top: @wr-header_height + @under-header_height;
-        min-height: 1100px;
+        top: @wr-header_height
+            + @under-header_height
+            + @banner_height;
+        min-height: @wr-content_min-height;
         width: @wr-content_width;
         left: 50%;
         margin-left: -@wr-content_width/2;
-        color: #000;
-        font-family: 'exo2 light';
-        font-size: 24px;
-        font-weight: normal;
     }
 
     .content{
-        /*        margin-top: 43px;
-                margin-bottom: 63px;*/
+        height: @content_height;
     }
+
     .content:nth-child(2n+1){
-        background-color: #675B3E;
         background-color: #48190F;
+        > .content-item{
+            left: 0px;
+        }
+        > .content-item-ico{
+            right: 0px;
+        }
     }
     .content:nth-child(2n){
         background-color: #2F3449;
+        > .content-item{
+            right: 0px;
+        }
+        > .content-item-ico{
+            left: 0px;
+        }
+    }
+    /*    .design{
+            background-color: #48190F;
+        }*/
+
+    .content:nth-child(1) > .content-item-ico{
+        background-image: url(../img/oboik.ru_60539.jpg);
+    }
+    .content:nth-child(2) > .content-item-ico{
+        background-image: url(../img/abstract-01.jpg);
+    }
+    .content:nth-child(3) > .content-item-ico{
+        background-image: url(../img/larger.jpg);
+    }
+    .banner{
+        top: @wr-header_height
+            + @under-header_height;
+        height: @banner_height;
+        width: 100%;
+        background-color: #D5D9E1;
+        display: block;
+    }
+    .banner-title{
+        text-align: center;
+        /*text-transform: uppercase;*/
+        font-family: 'Allegretto';
+        /*font-family: 'Open Sans Light';*/
+        /*font-family: 'Noto Serif';*/
+        /*font-family: 'PT Serif';*/
+        font-size: 123px;
+        padding-top: 0px;
     }
 
     .content-item{
+        font-family: 'Exo2 Light';
+        /*font-family: 'Exo2';*/
+        /*font-family: 'Noto Serif';*/
+        /*font-family: 'Open Sans Light';*/
+        font-size: 19px;
+        font-weight: normal;
         color: #FFF;
-        padding: 30px;
-        height: 100%;
+        padding: 0px;
+        padding-left: 73px;
+        padding-right: 73px;
+        padding-top: 9%;
+        margin: 0px;
+        height: @content-item_height;
         width: 50%;
     }
 
@@ -169,27 +234,20 @@ and open the template in the editor.
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top right;
-        height: 470px;
+        height: @content_height;
+        width: 50%;
         padding: 0px;
-        display: table-row;
-        vertical-align: middle;
     }
-    
-    .content:nth-child(1) > .content-item-ico{
-        background-image: url(../img/oboik.ru_60539.jpg);        
-    }
-    .content:nth-child(2) > .content-item-ico{
-        background-image: url(../img/abstract-01.jpg);        
-    }
-    .content:nth-child(3) > .content-item-ico{
-        background-image: url(../img/larger.jpg);
-    }
-    
+
+
     .content-title{
         color: #000;
         color: #FFF;
-        font-size: 70px;
-        /*background-color: rgba(255,255,255,0.62);*/
+        font-size: 52px;
+        font-family: 'Exo2 Light';
+        font-weight: normal;
+        text-transform: uppercase;
+        text-align: center;
         background-color: rgba(0,0,0,0.47);
         padding: 40px;
         margin: 0px;

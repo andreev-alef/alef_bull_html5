@@ -1,17 +1,15 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*
-    Created on : 14.03.2016, 11:53:42
-    Author     : andreev_af
-*/
 .root,
 .fio,
 .main-menu,
-.wr-content {
+.menu-item,
+.banner,
+.wr-content,
+.content-item,
+.content-item-ico {
   position: absolute;
+}
+.content {
+  position: relative;
 }
 @media screen {
   body {
@@ -19,14 +17,13 @@ and open the template in the editor.
     font-family: 'Noto Serif';
     font-size: 14px;
     background-color: #130036;
+    background-color: #252A40;
   }
   .root {
-    /*background-color: #8496BA;*/
-    /*background-color: #B3B3B3;*/
     min-height: 1700px;
-    width: 1100px;
+    width: 100%;
     left: 50%;
-    margin-left: -550px;
+    margin-left: -50%;
   }
   .wr-header {
     position: fixed;
@@ -39,9 +36,10 @@ and open the template in the editor.
   }
   .under-header {
     position: fixed;
-    background-color: rgba(213, 217, 225, 0);
+    background-color: rgba(0, 0, 0, 0);
     border: none;
-    border-bottom-color: rgba(213, 217, 225, 0.62);
+    border-bottom-color: #B3B3B3;
+    border-bottom-color: #D5D9E1;
     border-bottom-width: 13px;
     border-bottom-style: solid;
     top: 140px;
@@ -70,8 +68,19 @@ and open the template in the editor.
     width: 50%;
   }
   .menu-item {
-    display: inline-block;
     margin: 0px;
+  }
+  .menu-item:nth-child(4) {
+    left: 450px;
+  }
+  .menu-item:nth-child(3) {
+    left: 300px;
+  }
+  .menu-item:nth-child(2) {
+    left: 150px;
+  }
+  .menu-item:nth-child(1) {
+    left: 0px;
   }
   .menu-item > a {
     display: inline-block;
@@ -94,7 +103,6 @@ and open the template in the editor.
     transition-property: background-color, color;
   }
   .menu-item > a:hover {
-    /*background-color: #7B1904;*/
     background-color: #0E8A8A;
     color: #ffffff;
   }
@@ -109,42 +117,36 @@ and open the template in the editor.
   }
   /*----------------------------------------------------------------------------*/
   .wr-content {
-    top: 153px;
+    top: 333px;
     min-height: 1100px;
     width: 1100px;
     left: 50%;
     margin-left: -550px;
-    color: #000;
-    font-family: 'exo2 light';
-    font-size: 24px;
-    font-weight: normal;
   }
   .content {
-    /*        margin-top: 43px;
-                margin-bottom: 63px;*/
+    height: 470px;
   }
   .content:nth-child(2n+1) {
-    background-color: #675B3E;
     background-color: #48190F;
+  }
+  .content:nth-child(2n+1) > .content-item {
+    left: 0px;
+  }
+  .content:nth-child(2n+1) > .content-item-ico {
+    right: 0px;
   }
   .content:nth-child(2n) {
     background-color: #2F3449;
   }
-  .content-item {
-    color: #FFF;
-    padding: 30px;
-    height: 100%;
-    width: 50%;
+  .content:nth-child(2n) > .content-item {
+    right: 0px;
   }
-  .content-item-ico {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top right;
-    height: 470px;
-    padding: 0px;
-    display: table-row;
-    vertical-align: middle;
+  .content:nth-child(2n) > .content-item-ico {
+    left: 0px;
   }
+  /*    .design{
+            background-color: #48190F;
+        }*/
   .content:nth-child(1) > .content-item-ico {
     background-image: url(../img/oboik.ru_60539.jpg);
   }
@@ -154,11 +156,55 @@ and open the template in the editor.
   .content:nth-child(3) > .content-item-ico {
     background-image: url(../img/larger.jpg);
   }
+  .banner {
+    top: 153px;
+    height: 180px;
+    width: 100%;
+    background-color: #D5D9E1;
+    display: block;
+  }
+  .banner-title {
+    text-align: center;
+    /*text-transform: uppercase;*/
+    font-family: 'Allegretto';
+    /*font-family: 'Open Sans Light';*/
+    /*font-family: 'Noto Serif';*/
+    /*font-family: 'PT Serif';*/
+    font-size: 123px;
+    padding-top: 0px;
+  }
+  .content-item {
+    font-family: 'Exo2 Light';
+    /*font-family: 'Exo2';*/
+    /*font-family: 'Noto Serif';*/
+    /*font-family: 'Open Sans Light';*/
+    font-size: 19px;
+    font-weight: normal;
+    color: #FFF;
+    padding: 0px;
+    padding-left: 73px;
+    padding-right: 73px;
+    padding-top: 9%;
+    margin: 0px;
+    height: 470px;
+    width: 50%;
+  }
+  .content-item-ico {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 470px;
+    width: 50%;
+    padding: 0px;
+  }
   .content-title {
     color: #000;
     color: #FFF;
-    font-size: 70px;
-    /*background-color: rgba(255,255,255,0.62);*/
+    font-size: 52px;
+    font-family: 'Exo2 Light';
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
     background-color: rgba(0, 0, 0, 0.47);
     padding: 40px;
     margin: 0px;
